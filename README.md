@@ -14,7 +14,10 @@ var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 module.exports = {
     /// ... rest of config
     plugins: [
-        new ngAnnotatePlugin()
+        new ngAnnotatePlugin({
+            add: true,
+            // other ng-annotate options here
+        })
     ]
 }
 
