@@ -1,0 +1,28 @@
+{
+  "name": "ng-annotate-webpack-plugin",
+  "version": "0.1.0",
+  "description": "webpack plugin that runs ng-annotate on your bundles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cliechty/ng-annotate-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "ng-annotate",
+    "angular"
+  ],
+  "author": "Chris Liechty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cliechty/ng-annotate-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/cliechty/ng-annotate-webpack-plugin",
+  "dependencies": {
+    "ng-annotate": "^0.9.7",
+    "webpack-core": "^0.4.1"
+  }
+}
