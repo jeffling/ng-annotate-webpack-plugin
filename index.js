@@ -19,7 +19,10 @@ ngAnnotatePlugin.prototype.apply = function apply(compiler) {
             function annotateFile(file) {
                 var map = compilation.assets[file].map(),
                     value = ngAnnotate(compilation.assets[file].source(), options);
-                compilation.assets[file] = new OriginalSource(value.src, file, map);
+
+                if (!value.errors) {
+                    compilation.assets[file] = new OriginalSource(value.src, file, map);
+                }
             }
 
             chunks.forEach(getFilesFromChunk);
