@@ -1,5 +1,5 @@
 var ngAnnotate = require('ng-annotate'),
-    OriginalSource = require('webpack-core/lib/OriginalSource');
+    SourceMapSource = require('webpack-core/lib/SourceMapSource');
 
 function ngAnnotatePlugin(options) {
     this.options = options || { add: true };
@@ -21,7 +21,7 @@ ngAnnotatePlugin.prototype.apply = function apply(compiler) {
                     value = ngAnnotate(compilation.assets[file].source(), options);
 
                 if (!value.errors) {
-                    compilation.assets[file] = new OriginalSource(value.src, file, map);
+                    compilation.assets[file] = new SourceMapSource(value.src, file, map);
                 }
             }
 
