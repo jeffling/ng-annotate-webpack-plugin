@@ -22,3 +22,7 @@ module.exports = {
 }
 
 ```
+
+# Announcement
+Due to lack of time and the fact that I no longer use webpack with any of my projects. I will not be actively maintaining this code. Also at this time I feel webpack's lack of documentation (re: plugins) and potential unstability requires more webpack expertise than I care to obtain.
+If anyone would like to take over this project, let me know and we can figure something out.
