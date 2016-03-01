@@ -37,7 +37,7 @@ ngAnnotatePlugin.prototype.apply = function apply(compiler) {
                 }
 
                 if (!value.errors) {
-                    if (options.sourceMap) {
+                    if (options.sourceMap && asset.sourceAndMap) {
                         compilation.assets[file] = new SourceMapSource(value.src, file, JSON.parse(value.map), input, map);
                     }
                     else {
