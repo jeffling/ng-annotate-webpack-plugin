@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/cliechty/ng-annotate-webpack-plugin",
   "dependencies": {
-    "ng-annotate": "^1.0.1",
+    "ng-annotate": "^1.2.1",
     "webpack-core": "^0.6.5"
   }
 }
