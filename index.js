@@ -9,8 +9,8 @@ function ngAnnotatePlugin(options) {
 ngAnnotatePlugin.prototype.apply = function apply(compiler) {
     var options = this.options;
 
-    compiler.hooks.compilation.tap('NoAnnotateWebpackPlugin', function(compilation) {
-        compilation.hooks.optimizeChunkAssets.tapAsync('NoAnnotateWebpackPlugin', function(chunks, callback) {
+    compiler.hooks.compilation.tap('NgAnnotateWebpackPlugin', function(compilation) {
+        compilation.hooks.optimizeChunkAssets.tapAsync('NgAnnotateWebpackPlugin', function(chunks, callback) {
             var files = [];
 
             function getFilesFromChunk(chunk) {
