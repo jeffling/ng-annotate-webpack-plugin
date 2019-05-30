@@ -9,12 +9,19 @@ function ngAnnotatePlugin(options) {
 ngAnnotatePlugin.prototype.apply = function apply(compiler) {
     var options = this.options;
 
+    // Skip vendor chunks by default unless options.annotateChunk is provided
+    var annotateChunk = options.annotateChunk || function(chunk) {
+        return !chunk.name || !chunk.name.startsWith("vendors~");
+    };
+
     compiler.hooks.compilation.tap('NgAnnotateWebpackPlugin', function(compilation) {
         compilation.hooks.optimizeChunkAssets.tapAsync('NgAnnotateWebpackPlugin', function(chunks, callback) {
             var files = [];
 
             function getFilesFromChunk(chunk) {
-                files = files.concat(chunk.files);
+                if (annotateChunk(chunk)) {
+                    files = files.concat(chunk.files);
+                }
             }
 
             function annotateFile(file) {
