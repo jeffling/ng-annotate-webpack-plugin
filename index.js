@@ -1,5 +1,5 @@
 
-var ngAnnotate = require('ng-annotate'),
+var ngAnnotate = require('ng-annotate-patched'),
     SourceMapSource = require('webpack-core/lib/SourceMapSource');
 
 function ngAnnotatePlugin(options) {
