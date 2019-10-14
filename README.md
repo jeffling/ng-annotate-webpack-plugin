@@ -1,6 +1,9 @@
 ng-annotate-webpack-plugin
 ==========================
 
+ng-annotate is deprecated. Consider using https://github.com/schmod/babel-plugin-angularjs-annotate instead.
+
+---
 
 WebPack plugin that runs [ng-annotate](https://github.com/olov/ng-annotate) on your bundles
 
