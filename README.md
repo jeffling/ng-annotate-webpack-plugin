@@ -38,6 +38,8 @@ module.exports = {
 }
 ```
 
+Since version 0.4.1: switched to maintained fork of `ng-annotate`: [ng-annotate-patched](https://github.com/bluetech/ng-annotate-patched) to benefit from its improvements.
+
 Since version 0.4.0: for performance reasons, chunks where the name starts with `vendors~` are not
 annotated. To customize this behavior, set the option `annotateChunk` to a method that returns
 `true` if a chunk should be annotated:

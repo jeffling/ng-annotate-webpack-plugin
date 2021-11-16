@@ -1,7 +1,7 @@
 {
   "name": "ng-annotate-webpack-plugin",
-  "version": "0.4.0",
-  "description": "webpack plugin that runs ng-annotate on your bundles",
+  "version": "0.5.0",
+  "description": "webpack plugin that runs ng-annotate-patched on your bundles",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/cliechty/ng-annotate-webpack-plugin",
   "dependencies": {
-    "ng-annotate": "^1.2.1",
-    "webpack-core": "^0.6.5"
+    "ng-annotate-patched": "^1.13.0",
+    "webpack-core": "^0.6.9"
   }
 }

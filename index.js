@@ -1,6 +1,7 @@
 
-var ngAnnotate = require('ng-annotate'),
-    SourceMapSource = require('webpack-core/lib/SourceMapSource');
+var ngAnnotate = require('ng-annotate-patched'),
+    SourceMapSource = require('webpack-core/lib/SourceMapSource'),
+    OriginalSource = require('webpack-core/lib/OriginalSource');
 
 function ngAnnotatePlugin(options) {
     this.options = options || { add: true, sourceMap: false };
@@ -47,8 +48,11 @@ ngAnnotatePlugin.prototype.apply = function apply(compiler) {
                     if (options.sourceMap && asset.sourceAndMap) {
                         compilation.assets[file] = new SourceMapSource(value.src, file, JSON.parse(value.map), input, map);
                     }
-                    else {
+                    else if (map) {
                         compilation.assets[file] = new SourceMapSource(value.src, file, map);
+                    }
+                    else {
+                        compilation.assets[file] = new OriginalSource(value.src, file);
                     }
                 }
             }
